@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 //main code to get the tracks from the spotify API.
-=======
-//main code to get the tracks from the spotify API..
->>>>>>> 65ddf8667fdee134012eceaf4aae37b6013d27e3
 
 const request = require('request');
 const fs = require('fs');
