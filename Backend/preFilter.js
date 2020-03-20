@@ -1,7 +1,7 @@
 var arr = require(__dirname + '/data/DATA_SET_7906.json');
 
 minTempo = 60;
-minEnergy = 0.50;
+minEnergy = 0.70;
 minValence = 0.50;
 minDanceability = 0.50;
 
