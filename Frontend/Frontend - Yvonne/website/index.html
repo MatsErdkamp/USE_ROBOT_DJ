@@ -53,16 +53,37 @@
   <p>
 
     <div class="slidecontainer">
-      score: <input id="score" type="range" min="0" max="100" step="1" value="50" class="slider">
-      <br />
-      bpm: <input id="bpm_score" type="range" min="0" max="100" step="1" value="50" class="slider">
-      <br />
-      valence: <input id="valence_score" type="range" min="0" max="100" step="1" value="50" class="slider">
-      <br />
+
+      Tempo: <input id="Tempo" type="range" min="0" max="230" step="1" value="115" class="slider">
+      <div class="tempo_value">
+        <p>Value: <span id="tempo_value">0</span></p>
     </div>
+
+      <br />
+      Energy: <input id="Energy" type="range" min="0" max="1" step="0.05" value="0.5" class="slider">
+      <div class="energy_value">
+        <p>Value: <span id="energy_value">0</span></p>
+    </div>
+
+      <br />
+      Valence: <input id="Valence" type="range" min="0" max="1" step="0.05" value="0.5" class="slider">
+      <div class="valence_value">
+        <p>Value: <span id="valence_value">0</span></p>
+    </div>
+
+      <br />
+      Danceability: <input id="Danceability" type="range" min="0" max="1" step="0.05" value="0.5" class="slider">
+      <div class="danceability_value">
+        <p>Value: <span id="danceability_value">0</span></p>
+    </div>
+      <br />
+      
+  </div>
+
     <button id="submit">submit</button>
   </p>
 
 </body>
+<script src="sketch.js"></script>
 
 </html>

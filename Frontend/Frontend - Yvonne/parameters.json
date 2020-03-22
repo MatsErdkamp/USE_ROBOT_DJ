@@ -1,5 +1,6 @@
 {
-  "value": 100,
-  "bpm": 100,
-  "valence": 100
+  "Tempo": 28,
+  "Energy": 0.35,
+  "Valence": 0.85,
+  "Danceability": 0.45
 }
