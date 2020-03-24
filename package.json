@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.7.2",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.8.0",
     "btoa": "^1.2.1",
     "express": "^4.17.1",
     "http-server": "^0.12.1",
