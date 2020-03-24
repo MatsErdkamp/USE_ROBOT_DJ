@@ -13,6 +13,7 @@
   "dependencies": {
     "bluebird": "^3.5.3",
     "btoa": "^1.2.1",
+    "express": "^4.17.1",
     "http-server": "^0.11.1",
     "lodash": "^4.17.14",
     "object-assign-deep": "^0.4.0",
