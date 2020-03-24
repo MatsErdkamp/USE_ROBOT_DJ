@@ -59,7 +59,7 @@ body {
 
 .neumorphic-slider__back {
     width: calc(100% + 20px);
-    margin-left: -10px;
+    margin-left: -20px;
 }
 
 .neumorphic-progress__line {
@@ -92,14 +92,14 @@ body {
     height: 16px;
     background-color: #7d18f1;
     margin-top: -20px;
-    margin-left: calc(min(var(--value_left), var(--value_right)));
+    margin-left: calc(-10px + calc(min(var(--value_left), var(--value_right))));
     border-radius: 8px;
     opacity: 1;
     width: calc(max(calc(var(--value_right) - var(--value_left)), calc(var(--value_left) - var(--value_right))));
 }
 
 .neumorphic-slider__line2 {
-    margin-left: calc(min(var(--value2_left), var(--value2_right)));
+    margin-left: calc(-10px + calc(min(var(--value2_left), var(--value2_right))));
     width: calc(max(calc(var(--value2_right) - var(--value2_left)), calc(var(--value2_left) - var(--value2_right))));
 }
 
@@ -113,7 +113,7 @@ body {
     background-color: var(--back-color);
     left: var(--value_left);
     top: 2px;
-    margin-left: -10px;
+    margin-left: -20px;
     margin-top: 24px;
     cursor: pointer;
 }
@@ -132,7 +132,7 @@ body {
     background-color: var(--back-color);
     left: var(--value_right);
     top: 2px;
-    margin-left: -10px;
+    margin-left: -20px;
     margin-top: 24px;
     cursor: pointer;
 }
