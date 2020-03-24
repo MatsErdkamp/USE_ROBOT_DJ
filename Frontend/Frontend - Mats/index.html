@@ -17,53 +17,106 @@
     </head>
 
     <body class="py-5">
-        <div class="container">
-            <button type="button" class="my-5 btn neumorphic-btn">Button</button>
-            <div class="text-center">
+        <div class="d-flex flex-row justify-content-center">
 
-                <div class="neumorphic-card mx-auto">
+            <div class="neumorphic-card mx-5">
+                <div class="text-center"></div>
 
-                    <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 60px;">
-                        Valence
-                        <div class="neumorphic-slider__back"></div>
-                        <div class="neumorphic-slider__line"></div>
-                        <div class="neumorphic-slider__thumb_left"></div>
-                        <div class="neumorphic-slider__thumb_right"></div>
+                <div class="neumorphic-card__title">Filters</div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 30px;">
+                    <div class="neumorphic-card__text text-center">Valence</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-left">:/</div>
+                        <div class="neumorphic-card__text text-center">:|</div>
+                        <div class="neumorphic-card__text text-right">:)</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
                     </div>
-
-                    <div class="neumorphic-slider2" onselectstart="return false" style="margin-top: 20px;">
-                        Tempo
-                        <div class="neumorphic-slider__back"></div>
-                        <div class="neumorphic-slider__line2"></div>
-                        <div class="neumorphic-slider__thumb2_left"></div>
-                        <div class="neumorphic-slider__thumb2_right"></div>
-
-                    </div>
-
-                    <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
-                        Valence
-                        <div class="neumorphic-slider__back"></div>
-                        <div class="neumorphic-slider__line"></div>
-                        <div class="neumorphic-slider__thumb_left"></div>
-                        <div class="neumorphic-slider__thumb_right"></div>
-                    </div>
-
-                    <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
-                        Valence
-                        <div class="neumorphic-slider__back"></div>
-                        <div class="neumorphic-slider__line"></div>
-                        <div class="neumorphic-slider__thumb_left"></div>
-                        <div class="neumorphic-slider__thumb_right"></div>
-                    </div>
-
 
                 </div>
+
+                <div class="neumorphic-slider2" onselectstart="return false" style="margin-top: 20px;">
+                    <div class="neumorphic-card__text text-center">Tempo</div>
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line2"></div>
+                    <div class="neumorphic-slider__thumb2_left"></div>
+                    <div class="neumorphic-slider__thumb2_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">Traag</div>
+                        <div class="neumorphic-card__text text-right">Snel</div>
+                    </div>
+
+                </div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 30px;">
+                    <div class="neumorphic-card__text text-center">Valence</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
+                    </div>
+
+                </div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 30px;">
+                    <div class="neumorphic-card__text text-center">Valence</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
+                    </div>
+
+                </div>
+
+                <button type="button" class="mt-5 mb-0 btn neumorphic-btn">Confirm</button>
+
 
             </div>
 
 
-        </div>
-        <div class="container p-4">
+            <div class="neumorphic-outer mx-5 p-5 neumorphic-tab-container" style="width: 600px;">
+
+                <div class="neumorphic-inner neumorphic-tab-container__tab neumorphic-tab-container__tab_shown" id="barcelona">
+                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=661&q=80" />
+                    <!-- Photo by @alfonstaekema https://unsplash.com/photos/lvXeO04CxwQ -->
+                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </div>
+                <div class="neumorphic-inner neumorphic-tab-container__tab" id="stockholm">
+                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517824488624-8d6e5cdbf991?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+                    <!-- Photo by @martenbjork https://unsplash.com/photos/zr-zkaQd7f4 -->
+                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </div>
+                <div class="neumorphic-inner neumorphic-tab-container__tab" id="amsterdam">
+                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517736996303-4eec4a66bb17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+                    <!-- Photo by @robinoode https://unsplash.com/photos/4ZtYoQavCVI -->
+                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </div>
+                <div class="neumorphic-tab-container__controls pt-4">
+                    <div class="neumorphic-tab-container__control neumorphic-tab-container__control_active" data-target="barcelona">Barcelona</div>
+                    <div class="neumorphic-tab-container__control" data-target="stockholm">Stockholm</div>
+                    <div class="neumorphic-tab-container__control" data-target="amsterdam">Amsterdam</div>
+                </div>
+            </div>
+
+
             <div class="neumorphic-card mx-auto">
                 <label class="neumorphic-label" for="login__input">Login</label>
                 <input class="neumorphic-input" id="login__input" type="text" />
@@ -71,7 +124,11 @@
                 <input class="neumorphic-input" id="password_input" type="text" />
                 <button type="button" class="btn neumorphic-btn mt-5 mb-3">Log in</button>
             </div>
+
         </div>
+
+
+
         <div class="container card-collection p-4">
             <div class="neumorphic-card mx-auto">
                 <div class="neumorphic-card__outer">
@@ -98,30 +155,7 @@
                 <div class="neumorphic-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
         </div>
-        <div class="container">
-            <div class="neumorphic-outer mx-auto p-5 neumorphic-tab-container" style="width: 600px;">
-                <div class="neumorphic-tab-container__controls">
-                    <div class="neumorphic-tab-container__control neumorphic-tab-container__control_active" data-target="barcelona">Barcelona</div>
-                    <div class="neumorphic-tab-container__control" data-target="stockholm">Stockholm</div>
-                    <div class="neumorphic-tab-container__control" data-target="amsterdam">Amsterdam</div>
-                </div>
-                <div class="neumorphic-inner neumorphic-tab-container__tab neumorphic-tab-container__tab_shown" id="barcelona">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=661&q=80" />
-                    <!-- Photo by @alfonstaekema https://unsplash.com/photos/lvXeO04CxwQ -->
-                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                </div>
-                <div class="neumorphic-inner neumorphic-tab-container__tab" id="stockholm">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517824488624-8d6e5cdbf991?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
-                    <!-- Photo by @martenbjork https://unsplash.com/photos/zr-zkaQd7f4 -->
-                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                </div>
-                <div class="neumorphic-inner neumorphic-tab-container__tab" id="amsterdam">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517736996303-4eec4a66bb17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
-                    <!-- Photo by @robinoode https://unsplash.com/photos/4ZtYoQavCVI -->
-                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                </div>
-            </div>
-        </div>
+
         <div class="container py-5 card-collection">
             <div class="neumorphic-card" style="min-width: 300px;">
                 <div class="neumorphic-image__wrapper">
