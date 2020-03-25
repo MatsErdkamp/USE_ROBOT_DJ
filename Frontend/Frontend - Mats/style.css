@@ -248,10 +248,10 @@ body {
     box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
     background-color: var(--back-color);
     border-radius: 30px;
-    width: 100%;
+    width: 90%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1121px) {
     .neumorphic-card {
         width: 300px;
     }
