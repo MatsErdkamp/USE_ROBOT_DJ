@@ -18,7 +18,7 @@ loopNumber = 0;
 
 if (loopNumber == 0) {
     getArtist();
-    console.log("Audio Features are being generated!")
+    console.log("Artist features are being generated!")
 };
 
 function Loop() {
@@ -46,8 +46,8 @@ function Save() {
 
 
 function getArtist(access_token) {
-    AuthorizeWithRefreshToken(credentials.client_id, credentials.client_secret, authorization.refresh_token).then(function (newAuthorization) {
-        return new Promise(function (resolve, reject) {
+    AuthorizeWithRefreshToken(credentials.client_id, credentials.client_secret, authorization.refresh_token).then(function(newAuthorization) {
+        return new Promise(function(resolve, reject) {
 
 
 
@@ -64,7 +64,7 @@ function getArtist(access_token) {
                 headers: {
                     'Authorization': 'sBearer ' + newAuthorization.access_token
                 }
-            }, function (e, response) {
+            }, function(e, response) {
                 if (e) {
                     reject(e);
                     return;
@@ -80,7 +80,7 @@ function getArtist(access_token) {
 
                 //Artists.push(JSON.parse(response.body));
                 fs.writeFileSync(__dirname + '/data/Artists.json', JSON.stringify(Artists, null, 2))
-                //console.log(AudioFeatures);
+                    //console.log(AudioFeatures);
 
                 resolve(JSON.parse(response.body));
 
@@ -100,7 +100,7 @@ function AuthorizeWithRefreshToken(client_id, client_secret, refresh_token) {
 
     var botaAuth = bota(client_id + ":" + client_secret);
 
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         request({
             url: "https://accounts.spotify.com/api/token",
             method: 'POST',
@@ -111,7 +111,7 @@ function AuthorizeWithRefreshToken(client_id, client_secret, refresh_token) {
             headers: {
                 'Authorization': "Basic " + botaAuth
             }
-        }, function (e, response) {
+        }, function(e, response) {
             if (e) {
                 reject(e)
                 return;

@@ -39,7 +39,7 @@ body {
 .neumorphic-progress,
 .neumorphic-slider,
 .neumorphic-slider2 {
-    width: 260px;
+    width: 90%;
     margin: auto;
 }
 
@@ -52,14 +52,9 @@ body {
     box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0), inset 7px 7px 15px rgba(55, 84, 170, .15), inset -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
 }
 
-.neumorphic-slider,
-.neumorphic-slider2 {
-    width: 240px;
-}
-
 .neumorphic-slider__back {
     width: calc(100% + 20px);
-    margin-left: -20px;
+    margin-left: -10px;
 }
 
 .neumorphic-progress__line {
@@ -90,16 +85,16 @@ body {
 .neumorphic-slider__line,
 .neumorphic-slider__line2 {
     height: 16px;
-    background-color: #0f5bff;
+    background-image: linear-gradient(#ec0076, #ff0080, #ec0076);
     margin-top: -20px;
-    margin-left: calc(-10px + calc(min(var(--value_left), var(--value_right))));
+    margin-left: calc(min(var(--value_left), var(--value_right)));
     border-radius: 8px;
     opacity: 1;
     width: calc(max(calc(var(--value_right) - var(--value_left)), calc(var(--value_left) - var(--value_right))));
 }
 
 .neumorphic-slider__line2 {
-    margin-left: calc(-10px + calc(min(var(--value2_left), var(--value2_right))));
+    margin-left: calc(min(var(--value2_left), var(--value2_right)));
     width: calc(max(calc(var(--value2_right) - var(--value2_left)), calc(var(--value2_left) - var(--value2_right))));
 }
 
@@ -113,7 +108,7 @@ body {
     background-color: var(--back-color);
     left: var(--value_left);
     top: 2px;
-    margin-left: -20px;
+    margin-left: -10px;
     margin-top: 24px;
     cursor: pointer;
 }
@@ -132,7 +127,7 @@ body {
     background-color: var(--back-color);
     left: var(--value_right);
     top: 2px;
-    margin-left: -20px;
+    margin-left: -10px;
     margin-top: 24px;
     cursor: pointer;
 }
@@ -182,20 +177,19 @@ body {
     padding: 40px;
     box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
     border-radius: 30px;
-    max-width: 300px;
-    width: min-content;
+    width: 100%;
 }
 
 .neumorphic-card__title {
     color: rgb(65, 73, 94);
     font-size: 32px;
     padding: 0 0 0;
-    text-align: start;
+    text-align: center;
 }
 
 .neumorphic-card__text {
     padding: 0 0 0px;
-    margin-left: -20px;
+    margin-left: -0px;
     text-align: start;
     color: #8D96A8;
 }
@@ -254,6 +248,16 @@ body {
     box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
     background-color: var(--back-color);
     border-radius: 30px;
+    width: 90%;
+}
+
+@media (min-width: 1121px) {
+    .neumorphic-card {
+        width: 300px;
+    }
+    .neumorphic-outer {
+        width: 700px
+    }
 }
 
 .neumorphic-inner {
