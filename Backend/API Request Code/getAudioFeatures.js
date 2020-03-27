@@ -12,7 +12,7 @@ const redirect_uri = 'http://localhost:8888/callback';
 songArray = require(__dirname + "/data/Tracks.json")
 var IDCSV = ""
 AudioFeatures = [];
-songNumber = 7700;
+songNumber = songArray.length;
 loopNumber = 0;
 iterations = Math.ceil(songNumber / 100);
 
@@ -31,7 +31,7 @@ function getIDCSV() {
         //console.log(i);
 
     }
-    //IDCSV = IDCSV.slice(0, -1);
+    IDCSV = IDCSV.slice(0, -1);
     //console.log(IDCSV);
     Loop();
 
@@ -43,10 +43,10 @@ function Loop() {
         //console.log(loopNumber);
 
         loopNumber += 1;
-        setTimeout(getAudioFeatures, 300);
+        setTimeout(getAudioFeatures, 10);
 
 
-        console.log((loopNumber * 100) + " / " + songNumber + "  tracks generated!");
+        console.log(((loopNumber - 1) * 100) + " / " + songNumber + "  tracks generated!");
 
 
     } else {
@@ -85,7 +85,7 @@ function getAudioFeatures(access_token) {
 
 
             var index = IDCSV.slice((loopNumber - 1) * 2300, ((loopNumber) * 2300) - 1)
-
+            console.log(index);
 
             //console.log(index);
             request({
@@ -105,7 +105,7 @@ function getAudioFeatures(access_token) {
 
 
                 AudioFeatures = _.concat(AudioFeatures, x[0])
-
+                Loop();
 
 
                 // console.log(Object.values(JSON.parse(response.body)));
@@ -123,7 +123,7 @@ function getAudioFeatures(access_token) {
 
         });
     });
-    Loop();
+
 };
 
 function AuthorizeWithRefreshToken(client_id, client_secret, refresh_token) {

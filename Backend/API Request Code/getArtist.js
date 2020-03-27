@@ -12,14 +12,14 @@ const redirect_uri = 'http://localhost:8888/callback';
 songArray = require(__dirname + "/data/Tracks.json")
 var IDCSV = ""
 AudioFeatures = [];
-songNumber = 7700;
+songNumber = songArray.length;
 loopNumber = 0;
 iterations = Math.ceil(songNumber / 50);
 
 
 if (loopNumber == 0) {
     getIDCSV();
-    console.log("Audio Features are being generated!")
+    console.log("Artist info is being generated!")
 };
 
 function getIDCSV() {
@@ -29,8 +29,9 @@ function getIDCSV() {
         IDCSV = IDCSV.concat(ID, ",");
 
     }
+    IDCSV = IDCSV.slice(0, -1)
     Loop();
-    console.log(IDCSV);
+    //console.log(IDCSV);
 
 }
 
@@ -40,10 +41,10 @@ function Loop() {
         //console.log(loopNumber);
 
         loopNumber += 1;
-        setTimeout(getAudioFeatures, 300);
+        setTimeout(getAudioFeatures, 10);
 
 
-        console.log((loopNumber * 50) + " / " + songNumber + "  tracks generated!");
+        console.log(((loopNumber - 1) * 50) + " / " + songNumber + "  tracks generated!");
 
 
     } else {
@@ -81,8 +82,8 @@ function getAudioFeatures(access_token) {
             //console.log(newAuthorization.access_token);
 
 
-            var index = IDCSV.slice((loopNumber - 1) * 1150, ((loopNumber) * 1150) - 1)
-
+            var index = IDCSV.slice((loopNumber - 1) * 1150, ((loopNumber) * 1150) - 1);
+            console.log(index)
 
             //console.log(index);
             request({
@@ -99,7 +100,7 @@ function getAudioFeatures(access_token) {
                 resolve(JSON.parse(response.body));
 
                 x = Object.values(JSON.parse(response.body));
-                console.log(x)
+                //console.log(x)
                 AudioFeatures = _.concat(AudioFeatures, x[0])
                 Loop();
             });
