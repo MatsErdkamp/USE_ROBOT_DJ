@@ -1,92 +1,65 @@
+// test
 const request = require('request');
 const fs = require('fs');
 const bota = require('btoa');
 const process = require('process');
 const Promise = require('bluebird');
-var _ = require('lodash');
 
 const credentials = JSON.parse(fs.readFileSync(__dirname + '/credentials.json'));
 const authorization = JSON.parse(fs.readFileSync(__dirname + '/authorization.json'));
 const redirect_uri = 'http://localhost:8888/callback';
 
 songArray = require(__dirname + "/data/Tracks.json")
-var IDCSV = ""
-AudioFeatures = [];
-songNumber = 7700;
+Artists = [];
+songNumber = songArray.length;
 loopNumber = 0;
-iterations = Math.ceil(songNumber / 50);
+
 
 
 if (loopNumber == 0) {
-    getIDCSV();
-    console.log("Audio Features are being generated!")
+    getArtist();
+    console.log("Artist features are being generated!")
 };
 
-function getIDCSV() {
-
-    for (var i = 0; i < songArray.length; i++) {
-        var ID = String(songArray[i]["artist_uri"].slice(15));
-        IDCSV = IDCSV.concat(ID, ",");
-
-    }
-    Loop();
-    console.log(IDCSV);
-
-}
-
-
 function Loop() {
-    if (loopNumber < iterations) {
-        //console.log(loopNumber);
-
-        loopNumber += 1;
-        setTimeout(getAudioFeatures, 300);
-
-
-        console.log((loopNumber * 50) + " / " + songNumber + "  tracks generated!");
-
-
+    if (loopNumber < songNumber) {
+        setTimeout(getArtist, 5);
+        console.log(loopNumber + " / " + songNumber + "  Artist info (genre + popularity) generated!")
     } else {
-        setTimeout(Save, 1000);
-        console.log("Saving!")
+        setTimeout(Save, 1000)
 
     }
-
 }
 
 function Save() {
 
-    console.log(songNumber + " / " + songNumber + "  artist information generated!"); // CONSOLE LOG COMPLETION
-    console.log("Audio feature generation completed!")
-
-    //console.log(Object.values(AudioFeatures));
+    console.log(songNumber + " / " + songNumber + "  tracks generated!"); // CONSOLE LOG COMPLETION
+    console.log("Artist info generation completed!")
 
 
-    fs.writeFileSync(__dirname + '/data/Artists.json', JSON.stringify(AudioFeatures));
-}
-
-
-
+    fs.writeFileSync( //SAVE JSON OBJECT TO FILE
+        __dirname + '/data/Artists.json',
+        JSON.stringify(Artists, null, 2)
+    );
+};
 
 
 
-
-
-
-
-function getAudioFeatures(access_token) {
+function getArtist(access_token) {
     AuthorizeWithRefreshToken(credentials.client_id, credentials.client_secret, authorization.refresh_token).then(function(newAuthorization) {
         return new Promise(function(resolve, reject) {
+
+
+
 
             //console.log(newAuthorization.access_token);
 
 
-            var index = IDCSV.slice((loopNumber - 1) * 1150, ((loopNumber) * 1150) - 1)
+            var id = (songArray[loopNumber]["artist_uri"]).slice(15);
 
 
-            //console.log(index);
             request({
-                url: "https://api.spotify.com/v1/artists?ids=" + index,
+                url: "https://api.spotify.com/v1/artists/" + id,
                 method: 'GET',
                 headers: {
                     'Authorization': 'sBearer ' + newAuthorization.access_token
@@ -96,18 +69,31 @@ function getAudioFeatures(access_token) {
                     reject(e);
                     return;
                 }
+
+                x = JSON.parse(response.body);
+
+                genre = x.genres;
+                artist_popularity = x.popularity;
+
+                Artists.push({ genre, artist_popularity });
+
+
+                //Artists.push(JSON.parse(response.body));
+                fs.writeFileSync(__dirname + '/data/Artists.json', JSON.stringify(Artists, null, 2))
+                    //console.log(AudioFeatures);
+
                 resolve(JSON.parse(response.body));
 
-                x = Object.values(JSON.parse(response.body));
-                console.log(x)
-                AudioFeatures = _.concat(AudioFeatures, x[0])
+                //console.log(loopNumber);
+                loopNumber += 1;
                 Loop();
+
+
             });
 
 
         });
     });
-
 };
 
 function AuthorizeWithRefreshToken(client_id, client_secret, refresh_token) {

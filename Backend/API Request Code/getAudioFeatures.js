@@ -3,6 +3,7 @@ const fs = require('fs');
 const bota = require('btoa');
 const process = require('process');
 const Promise = require('bluebird');
+var _ = require('lodash');
 
 const credentials = JSON.parse(fs.readFileSync(__dirname + '/credentials.json'));
 const authorization = JSON.parse(fs.readFileSync(__dirname + '/authorization.json'));
@@ -83,7 +84,7 @@ function getAudioFeatures(access_token) {
             //console.log(newAuthorization.access_token);
 
 
-            var index = IDCSV.slice((loopNumber - 1) * 2300, ((loopNumber) * 2300))
+            var index = IDCSV.slice((loopNumber - 1) * 2300, ((loopNumber) * 2300) - 1)
 
 
             //console.log(index);
@@ -103,8 +104,7 @@ function getAudioFeatures(access_token) {
                 x = Object.values(JSON.parse(response.body));
 
 
-                y = x[0];
-                AudioFeatures.push(y)
+                AudioFeatures = _.concat(AudioFeatures, x[0])
 
 
 
