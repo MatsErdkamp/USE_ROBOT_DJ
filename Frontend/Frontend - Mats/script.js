@@ -14,15 +14,6 @@ $('.neumorphic-checkbox').on('click', function() {
 });
 
 
-
-for (var i = 0; i < neumorphic - checkbox.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
-}
-
 $('.neumorphic-tab-container__control').on('click', function() {
     if ($(this).hasClass('neumorphic-tab-container__control_active')) {
         return false;
