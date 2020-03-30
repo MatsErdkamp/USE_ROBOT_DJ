@@ -17,16 +17,17 @@
     </head>
 
     <body class="py-4">
-        <div>
-            <div class="neumorphic-card mx-5 mt-0 mb-5 p-2 pb-0 px-4" style="width: auto;">
 
-                <div class="neumorphic-card__title mb-0">SPOTIFY ROBOT DJ DEMO</div>'
-
+        <div class="d-flex flex-sm-row  flex-wrap justify-content-center">
+            <div class="neumorphic-card mx-5 mt-0 mb-4 p-2 pb-0 px-4" style="width: 75%;">
+                <input class="neumorphic-input mx-2" style="width: 60%" id="login__input" type="text" />
+                <button type="button" class="btn neumorphic-btn mx-5 mt-3 mb-3">Import playlist</button>
             </div>
+        </div>
         </div>
         <div class="d-flex flex-sm-row  flex-wrap justify-content-center">
 
-            <div class="neumorphic-card mx-5 mb-5">
+            <div class="neumorphic-card mx-3 mb-5">
                 <div class="text-center"></div>
 
                 <div class="neumorphic-card__title">Filters</div>
@@ -93,21 +94,19 @@
 
                 </div>
 
-                <button type="button" class="mt-5 mb-0 btn neumorphic-btn">Confirm</button>
-
 
             </div>
 
 
-            <div class="neumorphic-outer mx-1 mb-5 p-5 neumorphic-tab-container">
 
-                <div class="neumorphic-inner neumorphic-tab-container__tab neumorphic-tab-container__tab_shown" id="barcelona">
+            <div class="neumorphic-outer mx-3 mb-5 p-5 neumorphic-tab-container" style="width: min-content;">
+
+                <div class="neumorphic-inner neumorphic-tab-container__tab neumorphic-tab-container__tab_shown" id="barcelona" style="width: min-content;">
                     <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=661&q=80" />
                     <!-- Photo by @alfonstaekema https://unsplash.com/photos/lvXeO04CxwQ -->
-                    <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                 </div>
                 <div class="neumorphic-inner neumorphic-tab-container__tab" id="stockholm">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517824488624-8d6e5cdbf991?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+                    <image class="neumorphic-image" height="300" width src="https://images.unsplash.com/photo-1517824488624-8d6e5cdbf991?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
                     <!-- Photo by @martenbjork https://unsplash.com/photos/zr-zkaQd7f4 -->
                     <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                 </div>
@@ -116,71 +115,30 @@
                     <!-- Photo by @robinoode https://unsplash.com/photos/4ZtYoQavCVI -->
                     <div class="py-2 px-4 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                 </div>
-                <div class="neumorphic-tab-container__controls pt-4">
+                <div class="neumorphic-tab-container__controls pt-4 just">
                     <div class="neumorphic-tab-container__control neumorphic-tab-container__control_active" data-target="barcelona">Barcelona</div>
                     <div class="neumorphic-tab-container__control" data-target="stockholm">Stockholm</div>
                     <div class="neumorphic-tab-container__control" data-target="amsterdam">Amsterdam</div>
                 </div>
+
             </div>
 
 
-            <div class="neumorphic-card mx-5 mb-5 p-5">
-                <label class="neumorphic-label" for="login__input">Login</label>
-                <input class="neumorphic-input" id="login__input" type="text" />
-                <label class="neumorphic-label" for="password_input">Password</label>
-                <input class="neumorphic-input" id="password_input" type="text" />
-                <button type="button" class="btn neumorphic-btn mt-5 mb-3">Log in</button>
+            <div class="neumorphic-card mx-3 mb-5">
+                <div class="neumorphic-card__title">Genres</div>
+                <div class="neumorphic-btn neumorphic-checkbox my-3">Techno</div>
+                <div class="neumorphic-btn neumorphic-checkbox mb-3">Techno</div>
+                <div class="neumorphic-btn neumorphic-checkbox mb-3">Techno</div>
+                <div class="neumorphic-btn neumorphic-checkbox mb-3">Techno</div>
+
             </div>
+
 
         </div>
 
 
 
-        <div class="container card-collection p-4">
-            <div class="neumorphic-card mx-auto">
-                <div class="neumorphic-card__outer">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=661&q=80" />
-                    <!-- Photo by @alfonstaekema https://unsplash.com/photos/lvXeO04CxwQ -->
-                </div>
-                <div class="neumorphic-card__title">Barcelona</div>
-                <div class="neumorphic-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            </div>
-            <div class="neumorphic-card mx-auto">
-                <div class="neumorphic-card__outer">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517824488624-8d6e5cdbf991?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
-                    <!-- Photo by @martenbjork https://unsplash.com/photos/zr-zkaQd7f4 -->
-                </div>
-                <div class="neumorphic-card__title">Stockholm</div>
-                <div class="neumorphic-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            </div>
-            <div class="neumorphic-card mx-auto">
-                <div class="neumorphic-card__outer">
-                    <image class="neumorphic-image" height="300" src="https://images.unsplash.com/photo-1517736996303-4eec4a66bb17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
-                    <!-- Photo by @robinoode https://unsplash.com/photos/4ZtYoQavCVI -->
-                </div>
-                <div class="neumorphic-card__title">Amsterdam</div>
-                <div class="neumorphic-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            </div>
-        </div>
 
-        <div class="container py-5 card-collection">
-            <div class="neumorphic-card" style="min-width: 300px;">
-                <div class="neumorphic-image__wrapper">
-                    <image class="neumorphic-image" src="https://i.pinimg.com/originals/cb/98/4a/cb984a8d358ee8ff8355b6ab3d9dbe4b.jpg" width="100" />
-                </div>
-                <h4 class="neumorphic-card__title text-center">Emily Blunt</h4>
-                <div class="neumorphic-card__text">British-American actress. I hope nobody minds me using picture of her, she's just pretty.</div>
-            </div>
-            <div class="neumorphic-card" style="min-width: 300px;">
-                <div class="neumorphic-image__wrapper">
-                    <div class="neumorphic-image__placeholder">JD</div>
-                </div>
-                <h4 class="neumorphic-card__title text-center">John Doe</h4>
-                <div class="neumorphic-card__text">Name instance for somebody abstract. At least you won't get charged fee for him.
-                </div>
-            </div>
-        </div>
-    </body>
 
     </html>
     <!-- partial -->
@@ -188,6 +146,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.5/popper.min.js'></script>
     <script src="./script.js"></script>
 
-</body>
+    </body>
 
 </html>

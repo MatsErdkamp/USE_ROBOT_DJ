@@ -150,12 +150,7 @@ body {
 }
 
 .neumorphic-checkbox::after {
-    content: '';
     position: absolute;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid #a3aab9;
     background: transparent;
     top: 50%;
     left: 50%;
@@ -168,7 +163,7 @@ body {
 }
 
 .neumorphic-checkbox_active::after {
-    background-color: #a3aab9;
+    color: #ff0080;
 }
 
 .neumorphic-card {
@@ -221,6 +216,7 @@ body {
 
 .neumorphic-image {
     border-radius: 10px;
+    justify-content: center;
 }
 
 .neumorphic-image__wrapper {
@@ -268,6 +264,7 @@ body {
 .neumorphic-tab-container {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 }
 
 .neumorphic-tab-container__controls {
@@ -304,7 +301,7 @@ body {
 
 .neumorphic-tab-container__tab {
     display: none;
-    padding: 20px;
+    padding: 0px;
 }
 
 .neumorphic-tab-container__tab_shown {
