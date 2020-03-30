@@ -1,5 +1,15 @@
 {
-  "value": 100,
-  "bpm": 100,
-  "valence": 100
+  "Tempo": 45,
+  "Energy": 0.25,
+  "Valence": 0.7,
+  "Danceability": 0.85,
+  "Genre": [
+    "Ambient",
+    "Jazz",
+    "Pop",
+    "Classical",
+    "Country",
+    "World",
+    "HipHop"
+  ]
 }

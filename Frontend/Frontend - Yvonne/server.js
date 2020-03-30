@@ -19,31 +19,41 @@ function listening() {
   console.log('listening. . . ');
 }
 
-app.use(express.static('website'));
+app.use(express.static('site'));
 
-app.get('/add/:bpm_score/:valence_score/:score?', addWord);
+app.get('/add/:tempo_score/:energy_score/:valence_score/:danceability_score/:genres_new?', addWord);
+
 
 function addWord(request, response) {
 
   var data = request.params;
-  var value = "value";
-  var score = Number(data.score);
-  var bpm = "bpm";
-  var bpm_score = Number(data.bpm_score)
-  var valence = "valence";
-  var valence_score = Number(data.valence_score)
+  
+  var tempo = "Tempo";
+  var tempo_score = Number(data.tempo_score);
+  var energy = "Energy";
+  var energy_score = Number(data.energy_score);
+  var valence = "Valence";
+  var valence_score = Number(data.valence_score);
+  var danceability = "Danceability";
+  var danceability_score = Number(data.danceability_score);
+  var genre_index = 'Genre';
+  var genre = data.genres_new;
+  var genres =  genre.split(',');
+  console.log(genre);
 
   var reply;
   
-  if (!score || !valence_score || !bpm_score) {
+  if (!tempo_score || !energy_score || !valence_score || !danceability_score || !genres) {
     var reply = {
       msg: 'Score is required.'
     };
-    response.send(reply);
+    console.log(reply);
   } else {
-    words[value] = score;
-    words[bpm] = bpm_score;
+    words[tempo] = tempo_score;
+    words[energy] = energy_score;
     words[valence] = valence_score;
+    words[danceability] = danceability_score;
+    words[genre_index] = genres;
 
     var data = JSON.stringify(words, null, 2);
 
