@@ -13,8 +13,94 @@ function submitWord() {
     var energy_score = select('#Energy').value();
     var valence_score = select('#Valence').value();
     var danceability_score = select('#Danceability').value();
+<<<<<<< HEAD
+
+    
+    var mask = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+    var genres = ["Soul", "Reggae", "Ambient", "Rock" , "Jazz", "Pop", "Funk", "Electronic", "Classical", "Country", "Disco", "Blues", "World", "HipHop", "Metal", "Mood"];
+    var Soul = document.getElementById("Soul");
+    var Reggae = document.getElementById("Reggae");
+    var Ambient = document.getElementById("Ambient");
+    var Rock = document.getElementById("Rock");
+    var Jazz = document.getElementById("Jazz");
+    var Pop = document.getElementById("Pop");
+    var Funk = document.getElementById("Funk");
+    var Electronic = document.getElementById("Electronic");
+    var Classical = document.getElementById("Classical");
+    var Country = document.getElementById("Country");
+    var Disco = document.getElementById("Disco");
+    var Blues = document.getElementById("Blues");
+    var World = document.getElementById("World");
+    var HipHop = document.getElementById("HipHop");
+    var Metal = document.getElementById("Metal");
+    var Mood = document.getElementById("Mood");
+      
+    if(Soul.checked == true){
+      mask[0] = true;
+    }
+
+    if(Reggae.checked == true){
+      mask[1] = true;
+    }
+    
+    if(Ambient.checked == true){
+      mask[2] = true;
+    }
+
+    if(Rock.checked == true){
+      mask[3] = true;
+    }
+    if(Jazz.checked == true){
+      mask[4] = true;
+    }
+
+    if(Pop.checked == true){
+      mask[5] = true;
+    }
+    if(Funk.checked == true){
+      mask[6] = true;
+    }
+
+    if(Electronic.checked == true){
+      mask[7] = true;
+    }
+    if(Classical.checked == true){
+      mask[8] = true;
+    }
+
+    if(Country.checked == true){
+      mask[9] = true;
+    }
+    if(Disco.checked == true){
+      mask[10] = true;
+    }
+
+    if(Blues.checked == true){
+      mask[11] = true;
+    }
+    if(World.checked == true){
+      mask[12] = true;
+    }
+
+    if(HipHop.checked == true){
+      mask[13] = true;
+    }
+    if(Metal.checked == true){
+      mask[14] = true;
+    }
+
+    if(Mood.checked == true){
+      mask[15] = true;
+    }
+    
+    genres_new = genres.filter((item, i) => mask[i]);
+    //new
+  
+    loadJSON('add/' + tempo_score +  '/' + energy_score + '/' + valence_score + '/' + danceability_score + '/' + genres_new);
+=======
   
     loadJSON('add/' + tempo_score +  '/' + energy_score + '/' + valence_score + '/' + danceability_score);
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
   }
 
   //Slider output for Tempo 
