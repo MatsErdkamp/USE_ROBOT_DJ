@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "Tempo": 45,
   "Energy": 0.25,
   "Valence": 0.7,
@@ -12,4 +13,10 @@
     "World",
     "HipHop"
   ]
+=======
+  "Tempo": 230,
+  "Energy": 0.25,
+  "Valence": 0.75,
+  "Danceability": 0.3
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
 }

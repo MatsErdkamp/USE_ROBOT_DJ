@@ -43,7 +43,7 @@ function Loop() {
 
 function Save() {
 
-    console.log(songNumber + " / " + songNumber + "  tracks generated!"); // CONSOLE LOG COMPLETION
+    console.log((songNumber + 100) + " / " + songNumber + "  tracks generated!"); // CONSOLE LOG COMPLETION
     console.log("Track generation completed!")
     console.log("Now dropping duplicate & local files...")
 
@@ -76,20 +76,20 @@ function Run() {
         // We don't have authorization yet. Get it using the
         // authorization code.
         AuthorizeWithCode(
-            credentials.client_id,
-            credentials.client_secret,
-            credentials.authorization_code,
-            redirect_uri
-        ).then(function (tokens) {
+                credentials.client_id,
+                credentials.client_secret,
+                credentials.authorization_code,
+                redirect_uri
+            ).then(function(tokens) {
 
-            fs.writeFileSync(
-                __dirname + '/authorization.json',
-                JSON.stringify(tokens, null, 2)
-            );
+                fs.writeFileSync(
+                    __dirname + '/authorization.json',
+                    JSON.stringify(tokens, null, 2)
+                );
 
-            SaveRecentTracks(tokens);
-        })
-            .catch(function (error) {
+                SaveRecentTracks(tokens);
+            })
+            .catch(function(error) {
                 console.error(error);
                 process.exit(0);
             });
@@ -104,60 +104,59 @@ function Run() {
     function SaveRecentTracks(authorization) {
 
         AuthorizeWithRefreshToken(
-            credentials.client_id,
-            credentials.client_secret,
-            authorization.refresh_token
-        ).then(function (newAuthorization) {
+                credentials.client_id,
+                credentials.client_secret,
+                authorization.refresh_token
+            ).then(function(newAuthorization) {
 
-            var directory = __dirname + '/data/';
+                var directory = __dirname + '/data/';
 
-            readFirstTrackFrom(directory + "latest.json")
-                .then(function (track) {
-                }, function () { /* noop */ })
-                .catch(console.error)
-                .finally(function () {
+                readFirstTrackFrom(directory + "latest.json")
+                    .then(function(track) {}, function() { /* noop */ })
+                    .catch(console.error)
+                    .finally(function() {
 
-                    //for (var i = 0; i < 100; i++) {
-                    if (songNumber - (loopNumber * 100) > 100) {
-                        limit = 100;
+                        //for (var i = 0; i < 100; i++) {
+                        if (songNumber - (loopNumber * 100) > 100) {
+                            limit = 100;
 
-                    } else limit = songNumber % 100;
-
-
-                    GetRecentTracks(newAuthorization.access_token, limit, loopNumber)
-                        .then(function (tracks) {
-
-                            Loop();
-
-                            for (var i = 0; i < limit; i++) { //FILTERS THE DATA RETURNED BY THE API
-
-                                name = tracks.items[i].track.name;
-                                artist = tracks.items[i].track.artists[0].name;
-                                song_uri = tracks.items[i].track.uri;
-                                artist_uri = tracks.items[i].track.artists[0].uri;
-                                song_popularity = tracks.items[i].track.popularity
-
-                                tracksList.push({ name, song_uri, artist, artist_uri, song_popularity }); //PUSHES FILTERED LIST TO JSON OBJECT
-
-                                AuthorizeWithRefreshToken(
-                                    credentials.client_id,
-                                    credentials.client_secret,
-                                    authorization.refresh_token
-                                ).catch(function (error) {
-                                    console.error(error);
-                                    process.exit(1);
-
-                                });
-
-                            }
-                        });
-                    offset += 100; //ADDS 100 TO THE OFFSET (WE CAN ONLY FETCH 100 SONGS AT A TIME, THIS MAKES SURE ALL SONGS IN A PLAYLIST GET DOWNLOADED)
+                        } else limit = songNumber % 100;
 
 
-                });
+                        GetRecentTracks(newAuthorization.access_token, limit, loopNumber)
+                            .then(function(tracks) {
 
-        })
-            .catch(function (error) {
+                                Loop();
+
+                                for (var i = 0; i < limit; i++) { //FILTERS THE DATA RETURNED BY THE API
+
+                                    name = tracks.items[i].track.name;
+                                    artist = tracks.items[i].track.artists[0].name;
+                                    song_uri = tracks.items[i].track.uri;
+                                    artist_uri = tracks.items[i].track.artists[0].uri;
+                                    song_popularity = tracks.items[i].track.popularity
+
+                                    tracksList.push({ name, song_uri, artist, artist_uri, song_popularity }); //PUSHES FILTERED LIST TO JSON OBJECT
+
+                                    AuthorizeWithRefreshToken(
+                                        credentials.client_id,
+                                        credentials.client_secret,
+                                        authorization.refresh_token
+                                    ).catch(function(error) {
+                                        console.error(error);
+                                        process.exit(1);
+
+                                    });
+
+                                }
+                            });
+                        offset += 100; //ADDS 100 TO THE OFFSET (WE CAN ONLY FETCH 100 SONGS AT A TIME, THIS MAKES SURE ALL SONGS IN A PLAYLIST GET DOWNLOADED)
+
+
+                    });
+
+            })
+            .catch(function(error) {
                 console.error(error);
                 process.exit(1);
             });
@@ -167,7 +166,7 @@ function Run() {
     //THIS IS OBSOLETE
     // FilePathString -> Promise Error SpotifyTrack
     function readFirstTrackFrom(file) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function(resolve, reject) {
             var text = fs.readFileSync(file, 'utf8');
             var content = JSON.parse(text);
 
@@ -184,7 +183,7 @@ function Run() {
 
         var botaAuth = bota(client_id + ":" + client_secret);
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function(resolve, reject) {
             request({
                 url: "https://accounts.spotify.com/api/token",
                 method: 'POST',
@@ -195,7 +194,7 @@ function Run() {
                 headers: {
                     'Authorization': "Basic " + botaAuth
                 }
-            }, function (e, response) {
+            }, function(e, response) {
                 if (e) {
                     reject(e)
                     return;
@@ -214,7 +213,7 @@ function Run() {
 
         var botaAuth = bota(client_id + ":" + client_secret);
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function(resolve, reject) {
             request({
                 url: "https://accounts.spotify.com/api/token",
                 method: 'POST',
@@ -226,7 +225,7 @@ function Run() {
                 headers: {
                     'Authorization': "Basic " + botaAuth
                 }
-            }, function (e, response) {
+            }, function(e, response) {
                 if (e) {
                     reject(e);
                     return;
@@ -246,7 +245,7 @@ function Run() {
 
     //API CALL TO GET THE TRACKS
     function GetRecentTracks(access_token, lim, iter) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function(resolve, reject) {
 
             //console.log(limit);
             request({
@@ -256,7 +255,7 @@ function Run() {
                 headers: {
                     'Authorization': 'Bearer ' + access_token
                 }
-            }, function (e, response) {
+            }, function(e, response) {
                 if (e) {
                     reject(e);
                     return;
@@ -272,4 +271,3 @@ function Run() {
     };
 
 }
-

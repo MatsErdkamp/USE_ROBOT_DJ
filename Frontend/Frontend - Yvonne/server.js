@@ -23,11 +23,18 @@ app.use(express.static('site'));
 
 app.get('/add/:tempo_score/:energy_score/:valence_score/:danceability_score/:genres_new?', addWord);
 
+<<<<<<< HEAD
+=======
+app.get('/add/:tempo_score/:energy_score/:valence_score/:danceability_score?', addWord);
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
 
 function addWord(request, response) {
 
   var data = request.params;
+<<<<<<< HEAD
   
+=======
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
   var tempo = "Tempo";
   var tempo_score = Number(data.tempo_score);
   var energy = "Energy";
@@ -36,6 +43,7 @@ function addWord(request, response) {
   var valence_score = Number(data.valence_score);
   var danceability = "Danceability";
   var danceability_score = Number(data.danceability_score);
+<<<<<<< HEAD
   var genre_index = 'Genre';
   var genre = data.genres_new;
   var genres =  genre.split(',');
@@ -44,6 +52,12 @@ function addWord(request, response) {
   var reply;
   
   if (!tempo_score || !energy_score || !valence_score || !danceability_score || !genres) {
+=======
+
+  var reply;
+  
+  if (!tempo_score || !energy_score || !valence_score || !danceability_score) {
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
     var reply = {
       msg: 'Score is required.'
     };
@@ -53,7 +67,10 @@ function addWord(request, response) {
     words[energy] = energy_score;
     words[valence] = valence_score;
     words[danceability] = danceability_score;
+<<<<<<< HEAD
     words[genre_index] = genres;
+=======
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
 
     var data = JSON.stringify(words, null, 2);
 

@@ -13,6 +13,7 @@ function submitWord() {
     var energy_score = select('#Energy').value();
     var valence_score = select('#Valence').value();
     var danceability_score = select('#Danceability').value();
+<<<<<<< HEAD
 
     
     var mask = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
@@ -96,6 +97,10 @@ function submitWord() {
     //new
   
     loadJSON('add/' + tempo_score +  '/' + energy_score + '/' + valence_score + '/' + danceability_score + '/' + genres_new);
+=======
+  
+    loadJSON('add/' + tempo_score +  '/' + energy_score + '/' + valence_score + '/' + danceability_score);
+>>>>>>> f9034c2838216f80d45d53c8b7134681f67f7557
   }
 
   //Slider output for Tempo 
