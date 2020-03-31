@@ -22,18 +22,8 @@ body {
     border: none;
     padding: 10px 40px;
     border-radius: 40px;
-    color: #6D7587;
+    color: rgb(255, 255, 255);
     background-color: var(--back-color);
-    /*box-shadow: 3px 4px 6px 1px rgba(0, 0, 0, 0.3), 
-              -2px -2px 4px 2px rgba(255, 255, 255, 1), 
-              inset -14px -14px 20px -10px rgba(0, 0, 0, 0.1),
-              inset 14px 14px 20px -10px rgba(255, 255, 255, 0.5) !important;  */
-    box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, .2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0) !important;
-    transition: box-shadow .25s ease !important;
-}
-
-.neumorphic-btn:active {
-    box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0), inset 7px 7px 15px rgba(55, 84, 170, .15), inset -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
 }
 
 .neumorphic-progress,
@@ -60,7 +50,7 @@ body {
 .neumorphic-progress__line {
     width: var(--value);
     height: 16px;
-    background-color: #185BF1;
+    background-color: rgb(34, 179, 179);
     margin-top: -20px;
     margin-left: var(--value_left);
     border-radius: 8px;
@@ -85,7 +75,7 @@ body {
 .neumorphic-slider__line,
 .neumorphic-slider__line2 {
     height: 16px;
-    background-image: linear-gradient(#ec0076, #ff0080, #ec0076);
+    background-image: linear-gradient(#ec0076, #ff0080, #000294);
     margin-top: -20px;
     margin-left: calc(min(var(--value_left), var(--value_right)));
     border-radius: 8px;
@@ -160,7 +150,7 @@ body {
 
 .neumorphic-checkbox_active {
     box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0), inset 7px 7px 15px rgba(55, 84, 170, .15), inset -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
-    color: #ff0080;
+    color: #000000;
 }
 
 .neumorphic-card {
