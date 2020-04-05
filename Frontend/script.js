@@ -72,12 +72,19 @@ document.getElementById("Generate").addEventListener("click", generateValues);
 function generatePlaylist() {
     console.log('generating playlist!')
     console.log("Token: " + _token)
-    urlString = 'https://api.spotify.com/v1/users/' + userID + '/playlists'
+
+
+    createPlaylistString = 'https://api.spotify.com/v1/users/' + userID + '/playlists'
+
+    //CREATE THE EMPTY PLAYLIST
     $.ajax({
-        url: urlString,
+        url: createPlaylistString,
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + _token
+        },
+        success: function(data) {
+            handleData(data);
         },
         contentType: 'application/json',
         data: JSON.stringify({
@@ -86,8 +93,43 @@ function generatePlaylist() {
         }),
         dataType: 'json'
     });
+
+    //EXTRACT THE PLAYLIST ID
+    function handleData(d) {
+        console.log(d.id);
+        playlistID = d.id;
+        //ALLOW THE CODE TO MOVE ON ONCE THE ID IS FOUND
+        addSongs();
+    }
+
+
+    //ADD SONGS TO THE PLAYLIST
+    function addSongs() {
+        addSongString = 'https://api.spotify.com/v1/playlists/' + playlistID + '/tracks' //?uris=spotify:track:6o4xZSROU7Jk1VMrYsHIW0
+
+        $.ajax({
+            url: addSongString,
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + _token
+            },
+            contentType: 'application/json',
+            data: JSON.stringify({ "uris": ["spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0"] }),
+            success: function(data) {
+                logCreation(data);
+            },
+            error: function(data) {
+                logCreation(data);
+            },
+            dataType: 'json'
+        });
+    }
 }
 
+function logCreation(d) {
+    console.log(d)
+
+}
 
 //-----READING OF VALUES AND CONVERSION INTO THE CORRECT RANGE-----
 
