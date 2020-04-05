@@ -8,7 +8,7 @@
     --hover-color: #4b4b4b4d;
     --focus-color: #3d3d3d62; 
     --text-color: #ffffff;
-    --slider-color: #ffffff; 
+    --slider-color: #ffffff;
     --sliderline-color: #ffffff77;
 }
 
@@ -143,10 +143,9 @@ body {
     margin-top: 10%;
 }
 
-
 .neumorphic-checkbox_active {
-    color: var(--text-color);
-    background-color: var(--focus-color);
+    color: #ffffff;
+    background-color: var(--focus-color)
 }
 
 .neumorphic-card {
@@ -244,7 +243,7 @@ body {
 
 .neumorphic-inner {
     border-radius: 10px;
-    margin-top:5%;
+    margin-top: 5%;
 }
 
 .neumorphic-tab-container {
@@ -278,7 +277,7 @@ body {
     background-color: var(--hover-color);
 }
 
-.neumorphic-tab-container__control:active{
+.neumorphic-tab-container__control:active {
     background-color: var(--focus-colorcolor);
 }
 
