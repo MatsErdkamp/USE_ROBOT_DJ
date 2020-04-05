@@ -6,14 +6,10 @@
     --value2_right: 100%;
     --back-color: hsl(189, 41%, 48%);
     --hover-color: #4b4b4b4d;
-<<<<<<< HEAD
-    --focus-color: #3d3d3d62; 
-    --text-color: #ffffff;
-    --slider-color: #ffffff; 
-    --sliderline-color: #ffffff77;
-=======
     --focus-color: #3d3d3d62;
->>>>>>> 40de01013c5f179a19af15906f56cfc179eb60dc
+    --text-color: #ffffff;
+    --slider-color: #ffffff;
+    --sliderline-color: #ffffff77;
 }
 
 body {
@@ -35,13 +31,10 @@ body {
     background-color: var(--hover-color);
 }
 
-<<<<<<< HEAD
-=======
 .neumorphic-btn:active {
     background-color: var(--focus-color);
 }
 
->>>>>>> 40de01013c5f179a19af15906f56cfc179eb60dc
 .neumorphic-progress,
 .neumorphic-slider,
 .neumorphic-slider2 {
@@ -154,7 +147,6 @@ body {
     margin-top: 10%;
 }
 
-
 .neumorphic-checkbox_active {
     color: var(--text-color);
     background-color: var(--focus-color);
@@ -255,7 +247,7 @@ body {
 
 .neumorphic-inner {
     border-radius: 10px;
-    margin-top:5%;
+    margin-top: 5%;
 }
 
 .neumorphic-tab-container {
@@ -289,7 +281,7 @@ body {
     background-color: var(--hover-color);
 }
 
-.neumorphic-tab-container__control:active{
+.neumorphic-tab-container__control:active {
     background-color: var(--focus-colorcolor);
 }
 
