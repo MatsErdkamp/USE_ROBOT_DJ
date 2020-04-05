@@ -157,6 +157,7 @@ body {
 .neumorphic-card__title {
     color: var(--text-color);
     font-size: 32px;
+    font-weight: bold;
     padding: 0 0 4%;
     text-align: center;
 }
@@ -265,7 +266,7 @@ body {
     padding-right: 10px;
     margin-top: 10px 10px;
     color: var(--text-color);
-    font-weight: bolder;
+    font-weight: normal;
     font-size: 150%;
     background-color: var(--back-color);
     transition: box-shadow .4s ease;
