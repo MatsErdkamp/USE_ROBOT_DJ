@@ -148,8 +148,8 @@ body {
 }
 
 .neumorphic-checkbox_active {
-    color: var(--text-color);
-    background-color: var(--focus-color);
+    color: #ffffff;
+    background-color: var(--focus-color)
 }
 
 .neumorphic-card {
