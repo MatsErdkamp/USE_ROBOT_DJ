@@ -1,12 +1,15 @@
 :root {
     --value_left: 5%;
-    --value_right: 5%;
+    --value_right: 20%;
     --origin: --value_left;
     --value2_left: 60%;
     --value2_right: 100%;
-    --back-color: #2ac4af;
+    --back-color: hsl(189, 41%, 48%);
     --hover-color: #4b4b4b4d;
-    --focus-color: #3d3d3d62;
+    --focus-color: #3d3d3d62; 
+    --text-color: #ffffff;
+    --slider-color: #ffffff; 
+    --sliderline-color: #ffffff77;
 }
 
 body {
@@ -15,29 +18,23 @@ body {
     justify-content: center;
 }
 
-.btn:focus {
-    background-color: var(--focus-color);
-    outline: none;
-}
-
 .neumorphic-btn {
     font-size: 20px;
     border: none;
     padding: 10px 40px;
     border-radius: 40px;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     background-color: var(--back-color);
-    transition: box-shadow .25s ease !important;
 }
 
 .neumorphic-btn:hover {
     background-color: var(--hover-color);
 }
 
+
 .neumorphic-btn:active {
     background-color: var(--focus-color);
 }
-
 .neumorphic-progress,
 .neumorphic-slider,
 .neumorphic-slider2 {
@@ -86,7 +83,7 @@ body {
 .neumorphic-slider__line,
 .neumorphic-slider__line2 {
     height: 16px;
-    background-image: linear-gradient(#ffffff77, #ffffff77, #ffffff77);
+    background-image: linear-gradient(var(--sliderline-color), var(--sliderline-color), var(--sliderline-color));
     margin-top: -20px;
     margin-left: calc(min(var(--value_left), var(--value_right)));
     border-radius: 8px;
@@ -105,7 +102,7 @@ body {
     height: 20px;
     position: absolute;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--slider-color);
     left: var(--value_left);
     top: 2px;
     margin-left: -10px;
@@ -123,7 +120,7 @@ body {
     height: 20px;
     position: absolute;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--slider-color);
     left: var(--value_right);
     top: 2px;
     margin-left: -10px;
@@ -136,7 +133,7 @@ body {
 }
 
 .neumorphic-text {
-    color: #ffffff;
+    color: var(--text-color);
     margin: auto 30px;
     font-size: 22px;
 }
@@ -146,20 +143,15 @@ body {
     position: relative;
     margin: 0 5px;
     transition: all .25s ease;
+    float: left;
+    margin-top: 10%;
 }
 
-.neumorphic-checkbox::after {
-    position: absolute;
-    background: transparent;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all .25s ease;
-}
 
 .neumorphic-checkbox_active {
     color: #ffffff;
     background-color: var(--focus-color)
+
 }
 
 .neumorphic-card {
@@ -171,7 +163,7 @@ body {
 }
 
 .neumorphic-card__title {
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     font-size: 32px;
     padding: 0 0 0;
     text-align: center;
@@ -181,7 +173,7 @@ body {
     padding: 0 0 0px;
     margin-left: -0px;
     text-align: start;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
 }
 
 .neumorphic-card__outer {
@@ -192,7 +184,7 @@ body {
 }
 
 .neumorphic-label {
-    color: #ffffff;
+    color: var(--text-color);
     display: block;
     text-align: start;
     margin: 25px 10px 5px;
@@ -204,7 +196,7 @@ body {
     border: 3px solid #f3f4f7;
     padding: 5px 15px;
     outline: none !important;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
 }
 
 .neumorphic-input:hover {
@@ -230,7 +222,7 @@ body {
 }
 
 .neumorphic-image__placeholder {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 30px;
     padding: 25px 0 0 0;
 }
@@ -257,6 +249,7 @@ body {
 
 .neumorphic-inner {
     border-radius: 10px;
+    margin-top:5%;
 }
 
 .neumorphic-tab-container {
@@ -272,11 +265,15 @@ body {
     background-color: var(--back-color);
     border-radius: 15px;
     margin-bottom: 15px;
+    margin-left: 20%;
 }
 
 .neumorphic-tab-container__control {
     padding: 10px 10px;
-    color: rgb(255, 255, 255);
+    margin-right: 10%;
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 150%;
     background-color: var(--back-color);
     transition: box-shadow .4s ease;
     cursor: pointer;
@@ -284,6 +281,10 @@ body {
 
 .neumorphic-tab-container__control:hover {
     background-color: var(--hover-color);
+}
+
+.neumorphic-tab-container__control:active{
+    background-color: var(--focus-colorcolor);
 }
 
 .neumorphic-tab-container__control:first-child {
