@@ -4,9 +4,9 @@
     --origin: --value_left;
     --value2_left: 60%;
     --value2_right: 100%;
-    --back-color: hsl(189, 41%, 48%);
-    --hover-color: #4b4b4b4d;
-    --focus-color: #3d3d3d62; 
+    --back-color: hsl(177, 74%, 45%);
+    --hover-color: #ffffff77;
+    --focus-color: #3d3d3d62;
     --text-color: #ffffff;
     --slider-color: #ffffff;
     --sliderline-color: #ffffff77;
@@ -158,6 +158,7 @@ body {
 .neumorphic-card__title {
     color: var(--text-color);
     font-size: 32px;
+    font: bolder;
     padding: 0 0 0;
     text-align: center;
 }
@@ -254,16 +255,17 @@ body {
 .neumorphic-tab-container__controls {
     display: flex;
     border: 4px solid var(--back-color);
-    width: min-content;
     background-color: var(--back-color);
     border-radius: 15px;
     margin-bottom: 15px;
-    margin-left: 20%;
+    margin-top: 15px;
+    border: 4px solid #f3f4f7;
 }
 
 .neumorphic-tab-container__control {
-    padding: 10px 10px;
-    margin-right: 10%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px 10px;
     color: var(--text-color);
     font-weight: bolder;
     font-size: 150%;
