@@ -272,11 +272,15 @@ body {
     cursor: pointer;
 }
 
+.neumorphic-tab-container__control_active {
+    background-color: var(--focus-color);
+}
+
 .neumorphic-tab-container__control:hover {
     background-color: var(--hover-color);
 }
 
-.neumorphic-tab-container__control:active {
+.neumorphic-tab-container__control:focus {
     background-color: var(--focus-colorcolor);
 }
 
