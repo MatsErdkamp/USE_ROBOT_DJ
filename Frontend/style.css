@@ -19,7 +19,7 @@ body {
 }
 
 .neumorphic-btn {
-    font-size: 120%;
+    font-size: 1.2em;
     border: none;
     padding: 5% 10%;
     border-radius: 40px;
@@ -137,7 +137,6 @@ body {
 .neumorphic-checkbox {
     padding: 5%;
     position: relative;
-    margin: 50% 1%;
     transition: all .25s ease;
     float: left;
 }
