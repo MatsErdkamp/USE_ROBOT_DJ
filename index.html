@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spotify Implicit Grant Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/script.js" defer></script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+
+<body>
+    <!-- partial:index.partial.html -->
+    <html>
+
+    <head>
+    </head>
+
+    <body class="py-4">
+
+        </div>
+        <div class="d-flex flex-sm-row  flex-wrap justify-content-center">
+
+            <div class="neumorphic-card mx-3 mb-5">
+                <div class="text-center"></div>
+
+                <div class="neumorphic-card__title mb-3">Filters</div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 30px;">
+                    <div class="neumorphic-card__text text-center">Valence</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-left">:/</div>
+                        <div class="neumorphic-card__text text-center">:|</div>
+                        <div class="neumorphic-card__text text-right">:)</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
+                    </div>
+
+                </div>
+
+                <div class="neumorphic-slider2" onselectstart="return false" style="margin-top: 20px;">
+                    <div class="neumorphic-card__text text-center">Tempo</div>
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line2"></div>
+                    <div class="neumorphic-slider__thumb2_left"></div>
+                    <div class="neumorphic-slider__thumb2_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">Traag</div>
+                        <div class="neumorphic-card__text text-right">Snel</div>
+                    </div>
+
+                </div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
+                    <div class="neumorphic-card__text text-center">Energy</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
+                    </div>
+
+                </div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
+                    <div class="neumorphic-card__text text-center">Song Popularity</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
+                    </div>
+
+                </div>
+
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
+                    <div class="neumorphic-card__text text-center">Artist Popularity</div>
+
+                    <div class="neumorphic-slider__back"></div>
+                    <div class="neumorphic-slider__line"></div>
+                    <div class="neumorphic-slider__thumb_left"></div>
+                    <div class="neumorphic-slider__thumb_right"></div>
+
+                    <div class="d-flex flex-row justify-content-between px-2">
+                        <div class="neumorphic-card__text text-left">:(</div>
+                        <div class="neumorphic-card__text text-right">:D</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="neumorphic-outer mx-3 mb-5 p-5 py-3 neumorphic-tab-container" style="width: min-content;">
+                <div class="neumorphic-card__title mb-3">Excitement graph</div>
+                <div class="neumorphic-inner neumorphic-tab-container__tab neumorphic-tab-container__tab_shown" id="barcelona" style="width: min-content;">
+                    <image class="neumorphic-image" height="300" src="images/wave.png"></image>
+
+                </div>
+                <div class="neumorphic-inner neumorphic-tab-container__tab" id="stockholm">
+                    <image class="neumorphic-image" height="300" src="images/ramp.png"></image>
+                </div>
+                <div class="neumorphic-inner neumorphic-tab-container__tab" id="amsterdam">
+                    <image class="neumorphic-image" height="300" src="images/plateau.png"></image>
+                </div>
+                <div class="neumorphic-tab-container__controls pt-4 just">
+                    <div class="neumorphic-tab-container__control neumorphic-tab-container__control_active" data-target="barcelona">Wave</div>
+                    <div class="neumorphic-tab-container__control" data-target="stockholm">Ramp</div>
+                    <div class="neumorphic-tab-container__control" data-target="amsterdam">Plateau</div>
+                </div>
+
+            </div>
+
+
+
+            <div class="neumorphic-card mx-3 mb-5 py-3" style="width: 35%; margin-top: 2%">
+                <div class="neumorphic-card__title mt-n5" style="padding-bottom: 10%;">Genres</div>
+                <div class="d-flex flex-row flex-wrap justify-content-between">
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Ambient">
+                        Ambient</div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Blues">
+                        Blues</div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Classical">Classical
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Country">Country</div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Disco">Disco
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Electronic">Electronic
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Funk">Funk
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="HipHop">HipHop
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Jazz">Jazz
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Metal">Metal
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Pop">Pop
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Reggae">Reggae
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Rock">Rock
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Singer Songwriter">
+                        Singer Songwriter
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Soul">Soul
+                    </div>
+                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="World">World
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <div class="d-flex flex-sm-row  flex-wrap justify-content-center">
+                <div class="neumorphic-card mx-5 mt-0 mb-4 p-2 pb-0 px-4" style="width: 75%;">
+                    <input class="neumorphic-input mx-2" style="width: 60%" id="login__input" type="text" />
+                    <button type="button" class="btn neumorphic-btn mx-5 mt-3 mb-3" id="Generate">Generate playlist</button>
+                </div>
+            </div>
+
+
+
+    </html>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.5/popper.min.js'></script>
+    <script src="./script.js"></script>
+
+    </body>
+
+</html>
+
+</html>
