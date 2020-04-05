@@ -6,7 +6,7 @@
     --value2_right: 100%;
     --back-color: #2ac4af;
     --hover-color: #4b4b4b4d;
-    --focus-color: #3d3d3d62; 
+    --focus-color: #3d3d3d62;
 }
 
 body {
@@ -30,11 +30,11 @@ body {
     transition: box-shadow .25s ease !important;
 }
 
-.neumorphic-btn:hover{
+.neumorphic-btn:hover {
     background-color: var(--hover-color);
 }
 
-.neumorphic-btn:active{
+.neumorphic-btn:active {
     background-color: var(--focus-color);
 }
 
@@ -281,7 +281,7 @@ body {
     cursor: pointer;
 }
 
-.neumorphic-tab-container__control:hover{
+.neumorphic-tab-container__control:hover {
     background-color: var(--hover-color);
 }
 
