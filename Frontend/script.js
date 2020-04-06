@@ -65,7 +65,7 @@ $.ajax({
 });
 
 
-document.getElementById("Generate").addEventListener("click", generateValues);
+
 
 
 //CREATE THE PLAYLIST FOR THE USER
@@ -133,23 +133,23 @@ function logCreation(d) {
 
 //-----READING OF VALUES AND CONVERSION INTO THE CORRECT RANGE-----
 
-function generateValues() {
+document.getElementById("Generate").addEventListener("click", validateInput);
 
-    var sliderOffset = $('.neumorphic-slider').offset().left
-    var sliderWidth = $('.neumorphic-slider').width();
-
-    console.log('Converting page values:');
-
-    //GENRE SELECTION HANDLING CODE
-
+function validateInput() {
 
     if (checkedArray.length == 0) {
         alert("Please select genres!");
-    }
+    } else convertValues();
 
     console.log('Included genres:' + checkedArray);
+}
+
+function convertValues() {
 
 
+    var sliderOffset = $('.neumorphic-slider').offset().left
+    var sliderWidth = $('.neumorphic-slider').width();
+    console.log('Converting page values:');
     //VALENCE SLIDER CONVERSION
     minValence = Math.min(($('.neumorphic-slider__thumb_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb_right').offset().left - sliderOffset + 10)) / sliderWidth;
     maxValence = Math.max(($('.neumorphic-slider__thumb_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb_right').offset().left - sliderOffset + 10)) / sliderWidth;
