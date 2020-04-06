@@ -33,7 +33,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "5d7b7b63771f45efb4c618aa0046adb7";
-const redirectUri = 'http://localhost:8080';
+const redirectUri = 'http://matserdkamp.github.io/USE_ROBOT_DJ/Frontend';
 const scopes = [
     "user-read-private",
     "user-read-email",
