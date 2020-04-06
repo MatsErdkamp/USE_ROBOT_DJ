@@ -14,7 +14,7 @@ hash = window.location.hash
 window.location.hash = '';
 
 //load the dataset file
-fetch("https://raw.githubusercontent.com/MatsErdkamp/USE_ROBOT_DJ/Neumorphic/Frontend/ImplicitGrant/Callback/data.json")
+fetch("https://raw.githubusercontent.com/MatsErdkamp/USE_ROBOT_DJ/master/Backend/API%20Request%20Code/data/data.json")
     .then(function(resp) {
 
         return resp.json();
