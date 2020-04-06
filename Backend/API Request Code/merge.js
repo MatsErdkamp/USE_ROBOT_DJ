@@ -10,4 +10,4 @@ var result = objectAssignDeep(result, AudioFeatures);
 
 console.log(result);
 
-fs.writeFileSync(__dirname + '/data/DATA_SET_7906.json', JSON.stringify(result, null, 2));
+fs.writeFileSync(__dirname + '/data/data.json', JSON.stringify(result, null, 2));

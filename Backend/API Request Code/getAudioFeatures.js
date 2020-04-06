@@ -106,7 +106,9 @@ function getAudioFeatures(access_token) {
 
                 for (var i = 0; i < z.length; i++) {
 
-                    var excitement = ((z[i].valence * 0.07) * (z[i].energy * 0.16) + 0.45)
+
+
+                    var excitement = ((z[i].valence * 0.07) + (z[i].energy * 0.16) + 0.45)
                     z[i]['excitement'] = excitement;
 
 

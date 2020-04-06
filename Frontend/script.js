@@ -33,7 +33,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "5d7b7b63771f45efb4c618aa0046adb7";
-const redirectUri = 'http://matserdkamp.github.io/USE_ROBOT_DJ/Frontend';
+const redirectUri = 'http://localhost:8080'; //http://localhost:8080 //http://matserdkamp.github.io/USE_ROBOT_DJ/Frontend
 const scopes = [
     "user-read-private",
     "user-read-email",
@@ -146,10 +146,9 @@ function validateInput() {
 
 function convertValues() {
 
-
     var sliderOffset = $('.neumorphic-slider').offset().left
     var sliderWidth = $('.neumorphic-slider').width();
-    console.log('Converting page values:');
+
     //VALENCE SLIDER CONVERSION
     minValence = Math.min(($('.neumorphic-slider__thumb_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb_right').offset().left - sliderOffset + 10)) / sliderWidth;
     maxValence = Math.max(($('.neumorphic-slider__thumb_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb_right').offset().left - sliderOffset + 10)) / sliderWidth;
@@ -157,20 +156,49 @@ function convertValues() {
     //STILL NEED TO MAP THESE TO THE HIGHEST IN THE ARRAY
 
     //TEMPO SLIDER VALUE CONVERSION
-    var minTempo = Math.min(($('.neumorphic-slider__thumb2_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb2_right').offset().left - sliderOffset + 10)) / sliderWidth;
-    var maxTempo = Math.max(($('.neumorphic-slider__thumb2_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb2_right').offset().left - sliderOffset + 10)) / sliderWidth;
+    minTempo = Math.min(($('.neumorphic-slider__thumb2_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb2_right').offset().left - sliderOffset + 10)) / sliderWidth;
+    maxTempo = Math.max(($('.neumorphic-slider__thumb2_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb2_right').offset().left - sliderOffset + 10)) / sliderWidth;
     //console.log("Valence:" + tempoMin + " , " + tempoMax);
 
+    //ENERGY SLIDER VALUE CONVERSION
+    minEnergy = Math.min(($('.neumorphic-slider__thumb3_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb3_right').offset().left - sliderOffset + 10)) / sliderWidth;
+    maxEnergy = Math.max(($('.neumorphic-slider__thumb3_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb3_right').offset().left - sliderOffset + 10)) / sliderWidth;
 
+    //DANCEABILITY SLIDER VALUE CONVERSION
+    minDanceability = Math.min(($('.neumorphic-slider__thumb4_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb4_right').offset().left - sliderOffset + 10)) / sliderWidth;
+    maxDanceability = Math.max(($('.neumorphic-slider__thumb4_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb4_right').offset().left - sliderOffset + 10)) / sliderWidth;
+
+    //SONG POPULARITY SLIDER VALUE CONVERSION
+    minSongPopularity = Math.min(($('.neumorphic-slider__thumb5_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb5_right').offset().left - sliderOffset + 10)) / sliderWidth * 100;
+    maxSongPopularity = Math.max(($('.neumorphic-slider__thumb5_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb5_right').offset().left - sliderOffset + 10)) / sliderWidth * 100;
+
+    //SONG POPULARITY SLIDER VALUE CONVERSION
+    minArtistPopularity = Math.min(($('.neumorphic-slider__thumb6_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb6_right').offset().left - sliderOffset + 10)) / sliderWidth * 100;
+    maxArtistPopularity = Math.max(($('.neumorphic-slider__thumb6_left').offset().left - sliderOffset + 10), ($('.neumorphic-slider__thumb6_right').offset().left - sliderOffset + 10)) / sliderWidth * 100;
+
+    console.log(minValence + "-" + maxValence + " " + minTempo + "-" + maxTempo + " " + minEnergy + "-" + maxEnergy + " " + minDanceability + "-" + maxDanceability + " " + minSongPopularity + "-" + maxSongPopularity + " " + minArtistPopularity + "-" + maxArtistPopularity);
 
     //SONG FILTERING CODE
     var filteredData = arr.filter(item =>
 
         item.valence >= minValence &&
-        item.valence <= maxValence
+        item.valence <= maxValence &&
+        item.energy >= minEnergy &&
+        item.energy <= maxEnergy &&
+        item.danceability >= minDanceability &&
+        item.danceability <= maxDanceability &&
+        item.popularity >= minArtistPopularity &&
+        item.popularity <= maxArtistPopularity &&
+        item.song_popularity >= minSongPopularity &&
+        item.song_popularity <= maxSongPopularity
+
+
 
 
     )
+    filteredData.sort(sortByProperty('excitement'));
+    console.log(filteredData);
+
     console.log("Songs left that meet criteria:" + filteredData.length);
 
 
@@ -186,11 +214,21 @@ function convertValues() {
     generatePlaylist();
 }
 
+function sortByProperty(property) {
+    return function(a, b) {
+        if (a[property] > b[property])
+            return 1;
+        else if (a[property] < b[property])
+            return -1;
+
+        return 0;
+    }
+}
 
 
 
 
-
+//WEBSITE FUNCTIONALITY CODE (SLIDERS)
 
 
 $('.neumorphic-checkbox').on('click', function() {
@@ -218,8 +256,6 @@ $('.neumorphic-tab-container__control').on('click', function() {
     $(this).addClass('neumorphic-tab-container__control_active');
     $('#' + $(this).data('target')).addClass('neumorphic-tab-container__tab_shown');
 });
-
-
 
 $('.neumorphic-slider__thumb_left').on('mousedown', function() {
     $(document).on('mousemove.mm', function(e) {
@@ -268,7 +304,6 @@ $('.neumorphic-slider__thumb_right').on('mousedown', function() {
     });
 });
 
-
 $('.neumorphic-slider__thumb2_left').on('mousedown', function() {
     $(document).on('mousemove.mm', function(e) {
         var new_value = 0;
@@ -309,7 +344,6 @@ $('.neumorphic-slider__thumb2_right').on('mousedown', function() {
     });
 });
 
-
 $('.neumorphic-slider__thumb3_left').on('mousedown', function() {
     $(document).on('mousemove.mm', function(e) {
         var new_value = 0;
@@ -349,8 +383,6 @@ $('.neumorphic-slider__thumb3_right').on('mousedown', function() {
         $('.neumorphic-slider__thumb3_right').off('mouseup.mu');
     });
 });
-
-
 
 $('.neumorphic-slider__thumb4_left').on('mousedown', function() {
     $(document).on('mousemove.mm', function(e) {
