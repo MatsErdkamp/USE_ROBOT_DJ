@@ -12,9 +12,6 @@
     --value5_right: 60%;
     --value6_left: 40%;
     --value6_right: 80%;
-    --back-color1: #00dbc9;
-    --back-color2: #5460ce;
-    --back-color3: #59bdff;
     --hover-color: #ffffff77;
     --focus-color: #ffffff62;
     --text-color: #ffffff;
@@ -23,7 +20,7 @@
 }
 
 body {
-    background: linear-gradient(217deg, rgba(0, 255, 200, 0.8), rgba(0, 255, 191, 0) 70.71%), linear-gradient(127deg, rgba(98, 0, 255, 0.8), rgba(89, 0, 255, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    background: linear-gradient(217deg, rgb(0, 177, 138), rgba(0, 255, 191, 0) 70.71%), linear-gradient(127deg, rgba(98, 0, 255, 0.8), rgba(89, 0, 255, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
     text-align: center;
     justify-content: center;
 }
