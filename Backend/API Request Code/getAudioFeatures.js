@@ -102,9 +102,20 @@ function getAudioFeatures(access_token) {
                 resolve(JSON.parse(response.body));
 
                 x = Object.values(JSON.parse(response.body));
+                z = x[0]
+
+                for (var i = 0; i < z.length; i++) {
+
+                    var excitement = ((z[i].valence * 0.07) * (z[i].energy * 0.16) + 0.45)
+                    z[i]['excitement'] = excitement;
 
 
-                AudioFeatures = _.concat(AudioFeatures, x[0])
+                }
+
+                AudioFeatures = _.concat(AudioFeatures, z); //= 0,45+([@valence]*0,07)+(0,16*[@energy])
+                console.log(z)
+
+
                 Loop();
 
 
