@@ -471,36 +471,3 @@ $('.neumorphic-slider__thumb6_right').on('mousedown', function() {
         $('.neumorphic-slider__thumb6_right').off('mouseup.mu');
     });
 });
-
-
-//Scroll-behaviour
-
-window.addEventListener('scroll', function(e) {
-    catch_scroll(e);
-});
-
-let last_scroll = 0;
-let scrolling = false;
-
-function catch_scroll(e) {
-
-    e.preventDefault();
-
-    if (!scrolling) {
-
-        scrolling = true;
-
-        let offset = (last_scroll < 200) ? $(".names").offset().top : 0;
-
-        console.log(window.pageYOffset);
-
-        $('html, body').animate({
-            scrollTop: offset
-        }, 1000, function() {
-            scrolling = false;
-        });
-
-        last_scroll = window.pageYOffset;
-    }
-
-}
