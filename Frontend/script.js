@@ -1,4 +1,6 @@
 checkedArray = []
+output = []
+loopNumber = 0;
 
 // Get the hash of the url
 hash = window.location.hash
@@ -33,7 +35,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "5d7b7b63771f45efb4c618aa0046adb7";
-const redirectUri = 'http://localhost:8080'; //http://localhost:8080 //http://matserdkamp.github.io/USE_ROBOT_DJ/Frontend
+const redirectUri = 'http://matserdkamp.github.io/USE_ROBOT_DJ/Frontend'; //http://localhost:8080 //http://matserdkamp.github.io/USE_ROBOT_DJ/Frontend
 const scopes = [
     "user-read-private",
     "user-read-email",
@@ -99,32 +101,58 @@ function generatePlaylist() {
         console.log(d.id);
         playlistID = d.id;
         //ALLOW THE CODE TO MOVE ON ONCE THE ID IS FOUND
-        addSongs();
-    }
-
-
-    //ADD SONGS TO THE PLAYLIST
-    function addSongs() {
-        addSongString = 'https://api.spotify.com/v1/playlists/' + playlistID + '/tracks' //?uris=spotify:track:6o4xZSROU7Jk1VMrYsHIW0
-
-        $.ajax({
-            url: addSongString,
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + _token
-            },
-            contentType: 'application/json',
-            data: JSON.stringify({ "uris": ["spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0", "spotify:track:6o4xZSROU7Jk1VMrYsHIW0"] }),
-            success: function(data) {
-                logCreation(data);
-            },
-            error: function(data) {
-                logCreation(data);
-            },
-            dataType: 'json'
-        });
+        Loop();
     }
 }
+
+
+
+function Loop() {
+
+
+
+    if (loopNumber * 100 < filteredData.length) {
+        //console.log(loopNumber);
+
+        loopNumber += 1;
+        setTimeout(addSongs, 1);
+
+    }
+
+}
+
+//ADD SONGS TO THE PLAYLIST
+function addSongs() {
+    addSongString = 'https://api.spotify.com/v1/playlists/' + playlistID + '/tracks' //?uris=spotify:track:6o4xZSROU7Jk1VMrYsHIW0
+
+
+
+    out = output.slice(loopNumber * 99, (loopNumber * 99) + 99);
+    loopNumber += 1;
+    console.log(out);
+
+    $.ajax({
+        url: addSongString,
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer ' + _token
+        },
+        contentType: 'application/json',
+        data: JSON.stringify({ "uris": out }),
+        success: function(data) {
+            logCreation(data);
+            Loop();
+        },
+        error: function(data) {
+            logCreation(data);
+        },
+        dataType: 'json'
+    });
+
+
+
+}
+
 
 function logCreation(d) {
     console.log(d)
@@ -179,7 +207,7 @@ function convertValues() {
     console.log(minValence + "-" + maxValence + " " + minTempo + "-" + maxTempo + " " + minEnergy + "-" + maxEnergy + " " + minDanceability + "-" + maxDanceability + " " + minSongPopularity + "-" + maxSongPopularity + " " + minArtistPopularity + "-" + maxArtistPopularity);
 
     //SONG FILTERING CODE
-    var filteredData = arr.filter(item =>
+    filteredData = arr.filter(item =>
 
         item.valence >= minValence &&
         item.valence <= maxValence &&
@@ -196,10 +224,23 @@ function convertValues() {
 
 
     )
+
+
+
+
+
     filteredData.sort(sortByProperty('excitement'));
     console.log(filteredData);
 
     console.log("Songs left that meet criteria:" + filteredData.length);
+
+
+
+    for (var i = 0; i < filteredData.length; i++) {
+
+        output.push(filteredData[i]['song_uri']);
+
+    }
 
 
 
