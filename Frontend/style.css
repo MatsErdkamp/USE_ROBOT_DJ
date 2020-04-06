@@ -4,6 +4,14 @@
     --origin: --value_left;
     --value2_left: 60%;
     --value2_right: 100%;
+    --value3_left: 60%;
+    --value3_right: 100%;
+    --value4_left: 60%;
+    --value4_right: 100%;
+    --value5_left: 60%;
+    --value5_right: 100%;
+    --value6_left: 60%;
+    --value6_right: 100%;
     --back-color1: #00dbc9;
     --back-color2: #5460ce;
     --back-color3: #59bdff;
@@ -15,9 +23,7 @@
 }
 
 body {
-    background: linear-gradient(217deg, rgba(0, 255, 200, 0.8), rgba(0, 255, 191, 0) 70.71%), 
-    linear-gradient(127deg, rgba(98, 0, 255, 0.8), rgba(89, 0, 255, 0) 70.71%), 
-    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    background: linear-gradient(217deg, rgba(0, 255, 200, 0.8), rgba(0, 255, 191, 0) 70.71%), linear-gradient(127deg, rgba(98, 0, 255, 0.8), rgba(89, 0, 255, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
     text-align: center;
     justify-content: center;
 }
@@ -36,7 +42,11 @@ body {
 
 .neumorphic-progress,
 .neumorphic-slider,
-.neumorphic-slider2 {
+.neumorphic-slider2,
+.neumorphic-slider3,
+.neumorphic-slider4,
+.neumorphic-slider5,
+.neumorphic-slider6 {
     width: 90%;
     margin: auto;
 }
@@ -74,12 +84,20 @@ body {
 }
 
 .neumorphic-slider,
-.neumorphic-slider2 {
+.neumorphic-slider2,
+.neumorphic-slider3,
+.neumorphic-slider4,
+.neumorphic-slider5,
+.neumorphic-slider6 {
     position: relative;
 }
 
 .neumorphic-slider__line,
-.neumorphic-slider__line2 {
+.neumorphic-slider__line2,
+.neumorphic-slider__line3,
+.neumorphic-slider__line4,
+.neumorphic-slider__line5,
+.neumorphic-slider__line6 {
     height: 16px;
     background-image: linear-gradient(var(--sliderline-color), var(--sliderline-color), var(--sliderline-color));
     margin-top: -20px;
@@ -94,8 +112,32 @@ body {
     width: calc(max(calc(var(--value2_right) - var(--value2_left)), calc(var(--value2_left) - var(--value2_right))));
 }
 
+.neumorphic-slider__line3 {
+    margin-left: calc(min(var(--value3_left), var(--value3_right)));
+    width: calc(max(calc(var(--value3_right) - var(--value3_left)), calc(var(--value3_left) - var(--value3_right))));
+}
+
+.neumorphic-slider__line4 {
+    margin-left: calc(min(var(--value4_left), var(--value4_right)));
+    width: calc(max(calc(var(--value4_right) - var(--value4_left)), calc(var(--value4_left) - var(--value4_right))));
+}
+
+.neumorphic-slider__line5 {
+    margin-left: calc(min(var(--value5_left), var(--value5_right)));
+    width: calc(max(calc(var(--value5_right) - var(--value5_left)), calc(var(--value5_left) - var(--value5_right))));
+}
+
+.neumorphic-slider__line6 {
+    margin-left: calc(min(var(--value6_left), var(--value6_right)));
+    width: calc(max(calc(var(--value6_right) - var(--value6_left)), calc(var(--value6_left) - var(--value6_right))));
+}
+
 .neumorphic-slider__thumb_left,
-.neumorphic-slider__thumb2_left {
+.neumorphic-slider__thumb2_left,
+.neumorphic-slider__thumb3_left,
+.neumorphic-slider__thumb4_left,
+.neumorphic-slider__thumb5_left,
+.neumorphic-slider__thumb6_left {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -112,8 +154,28 @@ body {
     left: var(--value2_left);
 }
 
+.neumorphic-slider__thumb3_left {
+    left: var(--value3_left);
+}
+
+.neumorphic-slider__thumb4_left {
+    left: var(--value4_left);
+}
+
+.neumorphic-slider__thumb5_left {
+    left: var(--value5_left);
+}
+
+.neumorphic-slider__thumb6_left {
+    left: var(--value6_left);
+}
+
 .neumorphic-slider__thumb_right,
-.neumorphic-slider__thumb2_right {
+.neumorphic-slider__thumb2_right,
+.neumorphic-slider__thumb3_right,
+.neumorphic-slider__thumb4_right,
+.neumorphic-slider__thumb5_right,
+.neumorphic-slider__thumb6_right {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -128,6 +190,22 @@ body {
 
 .neumorphic-slider__thumb2_right {
     left: var(--value2_right);
+}
+
+.neumorphic-slider__thumb3_right {
+    left: var(--value3_right);
+}
+
+.neumorphic-slider__thumb4_right {
+    left: var(--value4_right);
+}
+
+.neumorphic-slider__thumb5_right {
+    left: var(--value5_right);
+}
+
+.neumorphic-slider__thumb6_right {
+    left: var(--value6_right);
 }
 
 .neumorphic-text {
