@@ -70,7 +70,7 @@ document.getElementById("Generate").addEventListener("click", generateValues);
 
 //CREATE THE PLAYLIST FOR THE USER
 function generatePlaylist() {
-    console.log('generating playlist!')
+    alert("Robot DJ generated playlist has been added to Spotify!")
     console.log("Token: " + _token)
 
 
