@@ -25,14 +25,19 @@
     <body class="py-5">
 
         </div>
-        <div class="d-flex flex-sm-row  flex-wrap justify-content-between">
 
-            <div class="neumorphic-card mx-3 mb-5 pt-2 col-3">
+        <div class="d-flex flex-sm-col flex-wrap align-self-center justify-content-center ">
+                <image class="neumorphic-image" height="50" src="images/logo.png"></image>
+        </div>
+
+        <div class="d-flex flex-sm-row justify-content-between">
+
+            <div class="neumorphic-card mx-2 mb-2 pt-2 col-3">
                 <div class="text-center"></div>
 
                 <div class="neumorphic-card__title mb-3">Filters</div>
 
-                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 30px;">
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 30px; width: 70%;">
                     <div class="neumorphic-card__text text-center">Valence</div>
 
                     <div class="neumorphic-slider__back"></div>
@@ -50,7 +55,7 @@
 
                 </div>
 
-                <div class="neumorphic-slider2" onselectstart="return false" style="margin-top: 20px;">
+                <div class="neumorphic-slider2" onselectstart="return false" style="margin-top: 10px;width: 70%;">
                     <div class="neumorphic-card__text text-center">Tempo</div>
                     <div class="neumorphic-slider__back"></div>
                     <div class="neumorphic-slider__line2"></div>
@@ -64,7 +69,7 @@
 
                 </div>
 
-                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 10px;width: 70%;">
                     <div class="neumorphic-card__text text-center">Energy</div>
 
                     <div class="neumorphic-slider__back"></div>
@@ -79,7 +84,7 @@
 
                 </div>
 
-                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 10px;width: 70%;">
                     <div class="neumorphic-card__text text-center">Song Popularity</div>
 
                     <div class="neumorphic-slider__back"></div>
@@ -94,7 +99,7 @@
 
                 </div>
 
-                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 20px;">
+                <div class="neumorphic-slider" onselectstart="return false" style="margin-top: 10px;width: 70%;">
                     <div class="neumorphic-card__text text-center">Artist Popularity</div>
 
                     <div class="neumorphic-slider__back"></div>
@@ -113,12 +118,11 @@
             </div>
 
 
-            <div class="neumorphic-outer mx-3 mb-5 pt-2 px-5  neumorphic-tab-container align-self-top" style="width: min-content;">
+            <div class="neumorphic-outer mx-3 mb-2 pt-2 px-5  neumorphic-tab-container align-self-top" style="width: min-content;">
                 <div class="neumorphic-card__title mb-3">Excitement graph</div>
 
                 <div class="neumorphic-inner neumorphic-tab-container__tab neumorphic-tab-container__tab_shown" id="Wave" style="width: min-content;">
                     <image class="neumorphic-image" height="300" src="images/wave.png"></image>
-
                 </div>
                 <div class="neumorphic-inner neumorphic-tab-container__tab" id="Ramp">
                     <image class="neumorphic-image" height="300" src="images/ramp.png"></image>
@@ -126,8 +130,13 @@
                 <div class="neumorphic-inner neumorphic-tab-container__tab" id="Plateau">
                     <image class="neumorphic-image" height="300" src="images/plateau.png"></image>
                 </div>
+
+                <div class="neumorphic-card justify-content-center flex-row flex-wrap d-flex align-self-center" style="color: white;">
+                    Excitement plotted over time
+                </div>
+
                 <div class="neumorphic-card justify-content-center flex-row flex-wrap d-flex align-self-center ">
-                    <div class="neumorphic-tab-container__controls">
+                    <div class="neumorphic-tab-container__controls align-self-center">
                         <div class="neumorphic-tab-container__control neumorphic-tab-container__control_active" data-target="Wave">Wave</div>
                         <div class="neumorphic-tab-container__control" data-target="Ramp">Ramp</div>
                         <div class="neumorphic-tab-container__control" data-target="Plateau">Plateau</div>
@@ -138,42 +147,42 @@
 
 
 
-            <div class="neumorphic-card mx-3 mb-5 py-3 px-5 pt-2 col-3">
-                <div class="neumorphic-card__title mt-n5">Genres</div>
-                <div class="d-flex flex-row flex-wrap justify-content-between">
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Ambient">
+            <div class="neumorphic-card mx-0 mb-2 py-3 px-0 pt-2 col-3">
+                <div class="neumorphic-card__title mt-n5" style="padding-bottom: 10%;">Genres</div>
+                <div class="d-flex flex-row flex-wrap justify-content-between" style="width: 92%;">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Ambient">
                         Ambient</div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Blues">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Blues">
                         Blues</div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Classical">Classical
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Classical">Classical
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Country">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Country">
                         Country</div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Disco">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Disco">
                         Disco
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Electronic">Electronic
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Electronic">Electronic
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Funk">Funk
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Funk">Funk
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="HipHop">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="HipHop">
                         HipHop
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Jazz">Jazz
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Jazz">Jazz
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Metal">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Metal">
                         Metal
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Pop">Pop
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Pop">Pop
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Reggae">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Reggae">
                         Reggae
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Rock">Rock
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Rock">Rock
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="Soul">Soul
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="Soul">Soul
                     </div>
-                    <div class="neumorphic-btn neumorphic-checkbox my-2 px-4" style="width: min-content;" id="World">
+                    <div class="neumorphic-btn neumorphic-checkbox my-3 px-4" style="width: min-content;" id="World">
                         World
                     </div>
                 </div>
@@ -182,8 +191,7 @@
 
         <div class="d-flex flex-sm-col flex-wrap align-self-center justify-content-center ">
             <div class="neumorphic-card mx-5 mt-0 mb-4 p-2 pb-0 px-4" style="width: 50%;">
-                <input class="neumorphic-input mx-2" style="width: 60%" id="login__input" type="text" />
-                <button type="button" class="btn neumorphic-btn mx-5 mt-3 mb-3 p-2" id="Generate">Generate
+                <button type="button" class="btn neumorphic-btn mx-5 mt-3 mb-3 p-3" style="background-color:#00000048;" id="Generate">Generate
                         playlist</button>
             </div>
         </div>
